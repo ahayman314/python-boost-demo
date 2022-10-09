@@ -2,6 +2,12 @@
 This code base demonstrates a hello world example of using Boost's C++ Python wrapper using conan and cmake. 
 
 ## How to run
+First, install conan
+```
+pip install -r requirements.txt
+```
+You will likely need to restart your terminal/IDE so conan is accessible. 
+
 Run the build.sh script that runs the package installation and builds the shared library for Python with 
 ```
 ./build.sh
