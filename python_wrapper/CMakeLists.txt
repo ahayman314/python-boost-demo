@@ -6,9 +6,6 @@ find_package(Boost MODULE REQUIRED)
 
 # Find Python, which is required by Boost
 find_package(Python 3 REQUIRED COMPONENTS Interpreter Development)
-message(STATUS "PYTHON_LIBRARIES: ${Python_LIBRARIES}")
-message(STATUS "PYTHON_EXE: ${Python_EXECUTABLE}")
-message(STATUS "PYTHON_INC_DIRS: ${Python_INCLUDE_DIRS}")
 
 # Create the shared library from the python wrapper code
 add_library(python_demo MODULE python_wrapper.cpp)

@@ -17,7 +17,7 @@ class LeetCodeConan(ConanFile):
     def build_requirements(self):
         self.build_requires("boost/1.79.0")
 
-    # Build command with 'conan build' is used. Calls CMake.
+    # Build command when 'conan build' is used. Calls CMake.
     def build(self):
         cmake = CMake(self)
         cmake.configure(source_folder=self.source_folder, build_folder=self.build_folder)
