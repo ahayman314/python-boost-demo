@@ -5,35 +5,10 @@ cmake_minimum_required(VERSION 3.16)
 set(CMAKE_CXX_STANARD 14)
 
 # Define a project name
-project (python_boost)
+project (python_boost_demo)
 
-# Find Boost package to make the libraries and headers avaiable
-find_package(Boost MODULE REQUIRED)
-
-# Make the produced libraries go into /build instead of /build/Release
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY_RELEASE ${CMAKE_BINARY_DIR})
-
-# Go execute the subdirectory CMakeLists.txt files
+# Go make the static library using the CMake file in /src
 add_subdirectory(src)
 
-# Add a library
-add_library(project_interface INTERFACE)
-
-# Add the include directories for the static library
-target_include_directories(project_interface INTERFACE 
-"inc"
-)
-
-# Link to libraries for the static library (we don't need any in this case)
-target_link_libraries(project_interface INTERFACE 
-)
-
-# Build the static library
-add_library(project_lib "")
-target_link_libraries(project_lib PRIVATE 
-    project_interface
-    demo_object
-)
-
-# Now that we have built our static library, go build the shared Python wrapper library
+# Now that we have built our static library, go build the shared Python wrapper library using the Cmake file in /python_wrapper
 add_subdirectory(python_wrapper)

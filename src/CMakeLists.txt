@@ -1,4 +1,5 @@
+# Create a static library
+add_library(project_lib demo.cpp)
 
-add_library(demo_object OBJECT demo.cpp)
-
-target_link_libraries(demo_object PRIVATE project_interface)
+# Include relevant header directories
+target_include_directories(project_lib PRIVATE "../inc")
