@@ -28,8 +28,13 @@ These files define the build for the program. This includes library linking, inc
 
 ### CMake Build Process
 1. [build script / Conan] Install Boost using Conan. The `--build=missing` flag takes care of building Boost with the right flags that allow it to use Boost.Python
-2. [Conan] Tell CMake to build
-3. [CMake] Create a static library for your code in /src and /inc, which is completely independent of the Python wrapper. This is useful because it can be tested independently. 
+2. [build script / Conan] Tell CMake to build
+3. [CMake] Create a static library for your code in /src and /inc, which is completely independent of the Python wrapper. This is useful because it can be tested independently (i.e. with gtest)
 4. [CMake] Create a shared library with the code from /python_wrapper which pulls in the static library and relevant headers. 
 5. [CMake] Convert the '.dll' to '.pyd' which is the format Python expects
 6. [build script] Copy the .pyd to the Python directory where you want to import it
+
+### Additional notes
+- This does not demonstrate best practices for Conan/CMake, but rather the smallest possible example to get Boost.Python working. 
+- Name the shared library the same as the Boost Python module.
+- This example can easily be used as a boilerplate to include additional dependencies like GTest for testing C++ code. 
