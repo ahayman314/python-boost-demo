@@ -1,21 +1,11 @@
 {
     "configurations": [
         {
-            "name": "Linux",
-            "includePath": [
-                "${workspaceFolder}/inc",
-                "~/.conan/data/boost/1.80.0/**"
-            ],
-            "intelliSenseMode": "linux-gcc-x64",
-            "compilerPath": "/usr/bin/clang",
-            "cStandard": "c17",
-            "cppStandard": "c++14"
-        },
-        {
             "name": "Windows", 
             "includePath": [
                 "${workspaceFolder}/inc",
-                "~/.conan/data/boost/1.80.0/**"
+                "~/.conan/data/boost/1.80.0/**",
+                "C:/Program Files/Python39/include"
             ]
         }
     ],
