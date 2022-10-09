@@ -2,12 +2,17 @@
 This code base demonstrates a hello world example of using Boost's C++ Python wrapper using conan and cmake. 
 
 ## How to run
-Run the build.sh script that runs the package installation and bulid. Change permissions if necessary with
+Run the build.sh script that runs the package installation and builds the shared library for Python with 
+```
+./build.sh
+```
+
+Change permissions if necessary with
 
 ```
 chmod 777 build.sh
 ```
-Once run, you can test the demo Python program with 
+Once run, the .dll (.pyd) will be in /python directory where you can test the demo Python program with 
 ```
 python python/demo.py
 ```
