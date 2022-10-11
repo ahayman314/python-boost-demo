@@ -1,8 +1,12 @@
 # Description
 This code base demonstrates a hello world example of using Boost's C++ Python wrapper using conan and cmake. 
 
+## Prerequisites
+- Python 3 
+- CMake version > 3.16
+
 ## How to run
-First, install conan
+First, install the Python requirements, including Conan with
 ```
 pip install -r requirements.txt
 ```
